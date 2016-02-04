@@ -15,7 +15,7 @@ angular.module('myApp', [])
 			$scope.tip=$scope.mealPrice*$scope.tipPercent
 			$scope.total=$scope.sub+$scope.tip
 			
-			$scope.tipAdd=($scope.tipAdd)+($scope.tip)
+			$scope.tipAdd=(+$scope.tipAdd)+(+$scope.tip)
 			$scope.mealCount=($scope.mealCount*1)+1
 			
 
