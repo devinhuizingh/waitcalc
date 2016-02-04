@@ -2,8 +2,12 @@ header {
 	text-align: center;
 }
 
-div {
-	border: solid;
-	max-width: 400px
-
+#mealDetails, #customerCharges, #myEarnings {
+	
 }
+
+#customerCharges, #myEarnings {
+	margin-bottom: 2em;
+}
+
+
