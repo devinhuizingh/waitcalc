@@ -2,12 +2,11 @@ header {
 	text-align: center;
 }
 
-#mealDetails, #customerCharges, #myEarnings {
-	
-}
-
 #customerCharges, #myEarnings {
 	margin-bottom: 2em;
 }
 
 
+input[type=number] {
+	width: 94%
+}
