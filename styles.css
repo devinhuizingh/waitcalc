@@ -10,3 +10,8 @@ header {
 input[type=number] {
 	width: 94%
 }
+
+li {
+	display: inline;
+	text-decoration: underline;
+}

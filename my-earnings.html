@@ -1,0 +1,17 @@
+<div class="row">
+	<div id="mealDetails" class="one-half column" >
+			
+		<div id="myEarnings">
+			<h2>My Earnings Info</h2>
+			Tip Total: {{$root.tipAdd | currency : $ : 2}}<br>
+			Meal Count: {{mealCount}}<br>
+			Average Tip Per Meal: {{$root.avg | currency : $ : 2}}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="twelve columns">
+		<button class="u-pull-right" ng-click="reset()">Reset</button>
+	</div>
+</div>

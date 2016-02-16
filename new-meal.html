@@ -1,0 +1,51 @@
+<div class="container">
+	<h2>Enter the Meal Details</h2>
+
+	<div class="row"> 
+		<div class ="one-third column">
+		Base Meal Price: 
+		</div>
+		<div class ="one-half column">
+		$<input type="number" ng-model="$root.mealPrice" placeholder="Meal Price" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class ="one-third column">
+		Tax Rate:  
+		</div>
+		<div class="one-half column">
+
+		%<input type="number" ng-model="$root.taxRate" placeholder=".06" required>
+		
+		</div>
+	</div>
+
+	<form>
+	<div class ="row">
+		<div class ="one-third column">
+		Tip Percentage: 
+		</div>
+		<div class ="one-half column">
+		%<input type="number" ng-model="$root.tipPercent" placeholder= ".20" required>
+		</div>
+	</div>
+
+		<button ng-click="submit()">Submit</button>
+		<input type="reset" value="Reset">
+
+	</form>
+
+
+	
+	<div class="one-half column">
+		<div id="customerCharges">
+			<h2>Customer Charges</h2>
+			Subtotal: {{$root.sub | currency : $ : 2}}<br>
+			Tip: {{$root.tip | currency : $ : 2}}<br>
+			Total: {{$root.total | currency : $ : 2}}
+			
+
+		</div>
+	</div>
+</div>

@@ -1,40 +1,60 @@
-angular.module('myApp', [])
-	.controller('firstController', function($scope) {
+angular.module('myApp', ['ngRoute'])
+	.config(['$routeProvider', function($routeProvider){
+        $routeProvider.when('/', {
+            templateUrl : 'home.html',
+            controller : 'firstController'
+        })
+        .when('/new-meal', {
+            templateUrl : 'new-meal.html',
+            controller : 'firstController'
+        }).when('/my-earnings', {
+            templateUrl : 'my-earnings.html',
+            controller : 'firstController'
+        });
+    }])
+
+	.controller('firstController', function($scope, $rootScope) {
 		reset()
 
 		$scope.submit = function(){
-			$scope.sub=$scope.mealPrice + $scope.mealPrice*$scope.taxRate
-			$scope.tip=$scope.mealPrice*$scope.tipPercent
-			$scope.total=$scope.sub+$scope.tip
-			$scope.mealPrice=null
-			$scope.tipPercent=null
+			console.log("there we go")
+			$rootScope.sub=$rootScope.mealPrice + $rootScope.mealPrice*$rootScope.taxRate;
+			$rootScope.tip=$rootScope.mealPrice*$rootScope.tipPercent;
+
+
+			$rootScope.total=$rootScope.sub+$scope.tip;
+			$rootScope.mealPrice=null;
+			$rootScope.tipPercent=null;
 			
 			
-			$scope.tipAdd += $scope.tip
-			$scope.mealCount++
-			$scope.avg=($scope.tipAdd/$scope.mealCount)
+			$rootScope.tipAdd += $rootScope.tip;
+			$rootSootScope.mealCount++;
+			$rootScope.avg=($rootScope.tipAdd/$rootScope.mealCount);
+			console.log($rootScope.mealCount)
 		
 		}
 
 		$scope.cancel = function(){
 			console.log("click works")
-			$scope.mealPrice=0
-			$scope.taxRate=0
-			$scope.tipPercent=0
+			$rootScope.mealPrice=0;
+			$rootScope.taxRate=0;
+			$rootScope.tipPercent=0;
 		}
 
-		$scope.reset = reset
+		$rootScope.reset = reset;
 
 		function reset(){
-			$scope.mealPrice=null
-			$scope.taxRate=null
-			$scope.tipPercent=null
-			$scope.sub=0
-			$scope.tip=0
-			$scope.total=0
-			$scope.tipAdd=0
-			$scope.mealCount=0
-			$scope.avg=0
+			$rootScope.mealPrice=null;
+			$rootScope.taxRate=null;
+			$rootScope.tipPercent=null;
+			$rootScope.sub=0;
+			$rootScope.tip=0;
+			$rootScope.total=0;
+			$rootScope.tipAdd=0;
+			$rootScope.mealCount=0;
+			$rootScope.avg=0;
 		}
+
+		
 
 	})
