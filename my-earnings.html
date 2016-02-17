@@ -3,9 +3,10 @@
 			
 		<div id="myEarnings">
 			<h2>My Earnings Info</h2>
-			Tip Total: {{$root.tipAdd | currency : $ : 2}}<br>
+			Tip Total: {{tipAdd | currency : $ : 2}}<br>
 			Meal Count: {{mealCount}}<br>
-			Average Tip Per Meal: {{$root.avg | currency : $ : 2}}
+			
+			Average Tip Per Meal: {{avg | currency : $ : 2}}
 		</div>
 	</div>
 </div>

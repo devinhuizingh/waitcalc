@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="styles.css">
 
 </head>
-<body ng-controller="firstController">
+<body>
 	<div class="container">
 		<div class="row">
 			<div class="twelve columns">
@@ -21,12 +21,15 @@
 			</div>
 		</div>
 		
-		<div ng-view></div>
+	<div class="view-animate-container">
+		<div ng-view class="view-animate"></div>
+	</div>
 		
 
 	</div>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+     <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
 	<script src="./myApp.js"></script>
 </body>
 </html>
